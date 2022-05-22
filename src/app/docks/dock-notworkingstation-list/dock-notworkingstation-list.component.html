@@ -1,0 +1,45 @@
+<div class='card'>
+    <div class="card-header">
+        {{pageTitle}}
+    </div>
+    <div class="card-body">
+    </div>
+    <div class='table-responsive'>
+        <table class='table'
+                *ngIf='docks.length'>
+            <thead>
+                <tr>
+                    <th>Nom station</th>
+                    <th>Identifiant station</th>
+                    <th>Vélos électriques disponibles</th>
+                    <th>Vélos mécaniques disponibles</th>
+                    <th>Actualisation de la donnée</th>
+                    <th>Nombre total vélos disponibles</th>
+                    <th>Nombre bornettes libres</th>
+                    <th>Capacité de la station</th>
+                    <th>Station en fonctionnement</th>
+                    <th>Borne de paiement disponible</th>
+                    <th>Nom communes équipées</th>
+                    <th>Retour vélib possible</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let dock of docks'>
+                  <td>{{dock.name}}</td>
+                  <td>{{dock.stationCode}}</td>
+                  <td>{{dock.ebike}}</td>
+                  <td>{{dock.mechanical}}</td>
+                  <td>{{dock.dueDate | date: 'dd/MM/yyyy'}}</td>
+                  <td>{{dock.numbikesavailable}}</td>
+                  <td>{{dock.numdocksavailable}}</td>
+                  <td>{{dock.capacity}}</td>
+                  <td>{{dock.isRenting}}</td>
+                  <td>{{dock.isInstalled}}</td>
+                  <td>{{dock.nomArrondissementCommunes}}</td>
+                  <td>{{dock.isReturning}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>
+  
